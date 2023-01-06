@@ -1,0 +1,8 @@
+body {
+  background-color: seashell;
+}
+
+* {
+  /* TODO 폰트교체; */
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
