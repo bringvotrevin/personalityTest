@@ -2,7 +2,12 @@ body {
   background-color: seashell;
 }
 
+@font-face {
+  font-family: 'hanna';
+  src: url('../font/BMHANNA_11yrs_otf.otf');
+}
+
 * {
   /* TODO 폰트교체; */
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'hanna';
 }
