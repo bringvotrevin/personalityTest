@@ -1,0 +1,9 @@
+.container #question .question_head {
+  width: 380px;
+  height: 50px;
+  margin: auto;
+  border: 3px solid #fff;
+  border-radius: 10px;
+  box-sizing: border-box;
+  text-align: center;
+}
