@@ -1,5 +1,6 @@
 body {
   background-color: seashell;
+  text-align: center;
 }
 
 @font-face {
@@ -8,6 +9,9 @@ body {
 }
 
 * {
-  /* TODO 폰트교체; */
   font-family: 'hanna';
+}
+
+img {
+  margin: 10px auto;
 }

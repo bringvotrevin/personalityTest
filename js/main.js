@@ -1,8 +1,10 @@
-const main = document.querySelector('#main');
-const question = document.querySelector('#question');
-const result = document.querySelector('#result');
+
+const mainPart = document.querySelector('#main');
+const qnaPart = document.querySelector('#qna');
+// const resultPart = document.querySelector('#result');
 
 const start = () => {
-	main.style.display = 'none';
-	question.style.display = 'block';
+	mainPart.style.display = 'none';
+	qnaPart.style.display = 'block';
+	qna();
 }

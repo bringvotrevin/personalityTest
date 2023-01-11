@@ -4,24 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>성격유형검사</title>
-    <link rel="stylesheet" href="./css/test.css" />
+    <link rel="stylesheet" href="./css/default.css" />
     <link rel="stylesheet" href="./css/head.css" />
+    <link rel="stylesheet" href="./css/questions.css" />
   </head>
   <body>
     <div class="container">
       <section id="main">
-        <h1>시작 페이지 머릿말</h1>
+        <div class="heading">시작 페이지 머릿말</div>
+
         <img src="./img/qk.jpg" alt="qk img" />
         <p>시작 페이지 메인문</p>
         <button type="button" onclick="js:start()">시작하기</button>
       </section>
-      <section id="question" style="display: none">
-        <h1 class="question_head">질문 페이지 머릿말</h1>
+      <section id="qna" style="display: none">
+        <div class="heading">질문 페이지 머릿말</div>
+        <div class="questions"></div>
       </section>
       <section id="result" style="display: none">
-        <h1>결과 페이지 머릿말</h1>
+        <div class="heading">결과 페이지 머릿말</div>
       </section>
-      <script src="./js/main.js" charset="utf-8"></script>
     </div>
+    <script src="./js/main.js" charset="utf-8"></script>
+    <script src="./js/qna.js"></script>
+    <script src="./js/data.js"></script>
   </body>
 </html>
