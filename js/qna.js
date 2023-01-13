@@ -14,20 +14,19 @@ const addQuestion = (index) => {
 
 const addAnswers = (index) => {
 	const questions = document.querySelector('.questions');
-	// const leftQuestion = document.createElement('div');
-	// const rightQuestion = document.createElement('div');
-	
-	// questions.appendChild(leftQuestion);
-	// questions.appendChild(rightQuestion);
-
 	let leftQuestion;
 	let rightQuestion;
 
 	if (index === 0) {
 		leftQuestion = document.createElement('div');
 		rightQuestion = document.createElement('div');
+		leftQuestion.setAttribute('id', 'leftQuestion');
+		rightQuestion.setAttribute('id', 'rightQuestion');
 		questions.appendChild(leftQuestion);
 		questions.appendChild(rightQuestion);
+	} else {
+		leftQuestion = document.getElementById('leftQuestion');
+		rightQuestion = document.getElementById('rightQuestion');
 	}
 	leftQuestion.innerHTML = questionList[index].answers[0].answer;
 	leftQuestion.style.width = "30%";
@@ -44,11 +43,22 @@ const addAnswers = (index) => {
 	rightQuestion.style.border = "3px solid #a9a"
 }
 
+const whenClicked = (index) => {
+	const leftQuestion = document.getElementById('leftQuestion');
+	const rightQuestion = document.getElementById('rightQuestion');
+	leftQuestion.addEventListener("click", function() {
+		if (index !== 2) qna(++index);
+	});
+	rightQuestion.addEventListener("click", function() {
+		if (index !== 2) qna(++index);
+	})
+}
+
 const qna = (index = 0) => {
 	if (index === 0) {
 		displayQna();
 	}
 	addQuestion(index);
 	addAnswers(index);
-	// qna(++index);
+	whenClicked(index);
 }
