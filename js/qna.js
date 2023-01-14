@@ -1,11 +1,10 @@
 const mainPart = document.querySelector('#main');
 const qnaPart = document.querySelector('#qna');
-const userAnswers = Object.freeze({
+const userAnswers = {
 	a: 0,
 	b: 0,
 	c: 0,
-});
-
+};
 
 const displayQna = () => {
 	mainPart.style.display = 'none';
@@ -38,7 +37,6 @@ const addAnswers = (index) => {
 	leftQuestion.style.height = "500px";
 	leftQuestion.style.margin = "50px 50px";
 	leftQuestion.style.padding = "10px";
-	
 	// leftQuestion.style.border = "3px solid #a9a"
 	rightQuestion.innerHTML = questionList[index].answers[1].answer;
 	rightQuestion.style.width = "30%";
@@ -53,15 +51,17 @@ const whenClicked = (index) => {
 	const rightQuestion = document.getElementById('rightQuestion');
 	leftQuestion.addEventListener("click", function() {
 		questionList[index].answers[0].types.forEach((type) => {
-			userAnswers[type]++;
+			userAnswers[type] += 1;
 		})
-		if (index !== 2) qna(++index);
+		if (index === 2) result(userAnswers);
+		else qna(++index);
 	});
 	rightQuestion.addEventListener("click", function() {
 		questionList[index].answers[1].types.forEach((type) => {
 			userAnswers[type]++;
 		})
-		if (index !== 2) qna(++index);
+		if (index === 2) result(userAnswers);
+		else qna(++index);
 	})
 
 	console.log(userAnswers);
@@ -74,4 +74,5 @@ const qna = (index = 0) => {
 	addQuestion(index);
 	addAnswers(index);
 	whenClicked(index);
+	// result(userAnswers);
 }
