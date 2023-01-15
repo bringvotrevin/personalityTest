@@ -53,18 +53,16 @@ const whenClicked = (index) => {
 		questionList[index].answers[0].types.forEach((type) => {
 			userAnswers[type] += 1;
 		})
-		if (index === 2) result(userAnswers);
+		if (index === 2) result(Object.values(userAnswers));
 		else qna(++index);
 	});
 	rightQuestion.addEventListener("click", function() {
 		questionList[index].answers[1].types.forEach((type) => {
 			userAnswers[type]++;
 		})
-		if (index === 2) result(userAnswers);
+		if (index === 2) result(Object.values(userAnswers));
 		else qna(++index);
 	})
-
-	console.log(userAnswers);
 }
 
 const qna = (index = 0) => {
