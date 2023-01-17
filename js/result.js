@@ -13,10 +13,12 @@ const displayResult = (userAnswer) => {
 	resultPart.appendChild(resultDiv);
 	resultDiv.innerHTML = userAnswer.description;
 	resultDiv.style.height = '500px';
-	// resultDiv.style.width = '50%';
 	resultDiv.style.margin = "50px 50px";
-	// resultDiv.style.backgroundColor = "#a9a";
 	resultDiv.style.padding = "10px";
+}
+
+const addShareButton = () => {
+	
 }
 
 const result = (userAnswers) => {
@@ -24,4 +26,5 @@ const result = (userAnswers) => {
 	resultPart.style.display = 'block';
 	const userAnswer = getResult(userAnswers);
 	displayResult(userAnswer);
+	addShareButton();
 }

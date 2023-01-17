@@ -2,11 +2,34 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>성격유형검사</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="dim" />
+    <meta name="keyword" content="QnA Test" />
+    <meta name="description" content="QnA Test" />
+
+    <!-- share -->
+    <meta property="og:url" content="https://qnatestbydim.netlify.app" />
+    <meta property="og:title" content="QnA Test" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="img/bb.JPG" />
+    <meta property="og:description" content="QnA Test" />
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" href="img/favicon.ico" />
+
     <link rel="stylesheet" href="./css/default.css" />
     <link rel="stylesheet" href="./css/head.css" />
     <link rel="stylesheet" href="./css/questions.css" />
+    <script
+      src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js"
+      integrity="sha384-dpu02ieKC6NUeKFoGMOKz6102CLEWi9+5RQjWSV0ikYSFFd8M3Wp2reIcquJOemx"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      Kakao.init('d51532396ba964a6d14b4f8af121d925'); // 사용하려는 앱의 JavaScript 키 입력
+    </script>
   </head>
   <body>
     <div class="container">
@@ -22,11 +45,18 @@
       </section>
       <section id="result" style="display: none">
         <div class="heading">결과 페이지 머릿말</div>
+        <a id="kakaotalk-sharing-btn" href="javascript: kakaoShare();">
+          <img
+            src="https://developers.kakao.com/assets/img/about/logos/kakaotalksharing/kakaotalk_sharing_btn_medium.png"
+            alt="카카오톡 공유 보내기 버튼"
+          />
+        </a>
       </section>
     </div>
     <script src="./js/main.js" charset="utf-8"></script>
     <script src="./js/qna.js"></script>
     <script src="./js/data.js"></script>
     <script src="./js/result.js"></script>
+    <script src="./js/share.js"></script>
   </body>
 </html>
