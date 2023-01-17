@@ -54,14 +54,14 @@ const whenClicked = (index) => {
 			userAnswers[type] += 1;
 		})
 		if (index === 2) result(Object.values(userAnswers));
-		else addAnswers(++index);
+		else addQuestion(++index);
 	});
 	rightQuestion.addEventListener("click", function() {
 		questionList[index].answers[1].types.forEach((type) => {
 			userAnswers[type]++;
 		})
 		if (index === 2) result(Object.values(userAnswers));
-		else addAnswers(++index);
+		else addQuestion(++index);
 	})
 }
 
