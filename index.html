@@ -35,7 +35,11 @@
     <div class="container">
       <section id="main">
         <div class="heading">시작 페이지 머릿말</div>
-        <img src="./img/qk.jpg" alt="qk img" />
+        <img
+          src="./img/qk.jpg"
+          alt="qk img"
+          style="width: 40%; margin: 10px auto"
+        />
         <p>시작 페이지 메인문</p>
         <button type="button" onclick="js:start()">시작하기</button>
       </section>
@@ -44,11 +48,12 @@
         <div class="questions"></div>
       </section>
       <section id="result" style="display: none">
-        <div class="heading">결과 페이지 머릿말</div>
+        <div class="heading" id="resultHeading">결과 페이지 머릿말</div>
         <a id="kakaotalk-sharing-btn" href="javascript: kakaoShare();">
           <img
             src="https://developers.kakao.com/assets/img/about/logos/kakaotalksharing/kakaotalk_sharing_btn_medium.png"
             alt="카카오톡 공유 보내기 버튼"
+            width="5%"
           />
         </a>
       </section>

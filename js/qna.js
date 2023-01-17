@@ -33,15 +33,15 @@ const addAnswers = (index) => {
 		rightQuestion = document.getElementById('rightQuestion');
 	}
 	leftQuestion.innerHTML = questionList[index].answers[0].answer;
-	leftQuestion.style.width = "30%";
-	leftQuestion.style.height = "500px";
-	leftQuestion.style.margin = "50px 50px";
+	leftQuestion.style.width = "25%";
+	leftQuestion.style.height = "300px";
+	leftQuestion.style.margin = "30px 30px";
 	leftQuestion.style.padding = "10px";
 	// leftQuestion.style.border = "3px solid #a9a"
 	rightQuestion.innerHTML = questionList[index].answers[1].answer;
-	rightQuestion.style.width = "30%";
-	rightQuestion.style.height = "500px";
-	rightQuestion.style.margin = "50px 50px";
+	rightQuestion.style.width = "25%";
+	rightQuestion.style.height = "300px";
+	rightQuestion.style.margin = "30px 30px";
 	rightQuestion.style.padding = "10px";
 	// rightQuestion.style.border = "3px solid #a9a"
 }
