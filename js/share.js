@@ -1,4 +1,6 @@
-const url = 'https://qnatestbydim.netlify.app/index.html';
+const url = 'https://qnatestbydim.netlify.app/';
+const webUrl = url + 'index.html';
+const imgUrl = url + 'img/bb.jpg';
 
 const kakaoShare = () => {
   Kakao.Share.createDefaultButton({
@@ -8,19 +10,19 @@ const kakaoShare = () => {
       title: 'QnA Test',
       description: 'by dim',
       imageUrl:
-        './img/bb.jpg',
+        imgUrl,
       link: {
         // [내 애플리케이션] > [플랫폼] 에서 등록한 사이트 도메인과 일치해야 함
-        mobileWebUrl: url,
-        webUrl: url,
+        mobileWebUrl: webUrl,
+        webUrl: webUrl,
       },
     },
     buttons: [
       {
         title: '결과 확인하기',
         link: {
-          mobileWebUrl: url,
-          webUrl: url,
+          mobileWebUrl: webUrl,
+          webUrl: webUrl,
         },
       },
     ],
