@@ -37,13 +37,15 @@ const addAnswers = (index) => {
 	leftQuestion.style.height = "300px";
 	leftQuestion.style.margin = "30px 30px";
 	leftQuestion.style.padding = "10px";
-	// leftQuestion.style.border = "3px solid #a9a"
+	// leftQuestion.style.border = "1px solid #000"
+	// leftQuestion.style.borderRadius = "10px";
 	rightQuestion.innerHTML = questionList[index].answers[1].answer;
 	rightQuestion.style.width = "25%";
 	rightQuestion.style.height = "300px";
 	rightQuestion.style.margin = "30px 30px";
 	rightQuestion.style.padding = "10px";
-	// rightQuestion.style.border = "3px solid #a9a"
+	// rightQuestion.style.border = "1px solid #000"
+	// rightQuestion.style.borderRadius = "10px";
 }
 
 const whenClicked = (index) => {
