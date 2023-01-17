@@ -9,16 +9,18 @@ const getResult = (userAnswers) => {
 
 const displayResult = (userAnswer) => {
 	const resultDiv = document.createElement('div');
+	const shareButton = document.getElementById('kakaotalk-sharing-btn');
 
-	resultPart.appendChild(resultDiv);
+	resultPart.insertBefore(resultDiv, shareButton);
+	// resultPart.appendChild(resultDiv);
 	resultDiv.innerHTML = userAnswer.description;
-	resultDiv.style.height = '500px';
-	resultDiv.style.margin = "50px 50px";
+	resultDiv.style.height = "40%";
+	resultDiv.style.margin = "30px 30px";
 	resultDiv.style.padding = "10px";
 }
 
 const addShareButton = () => {
-	
+
 }
 
 const result = (userAnswers) => {
