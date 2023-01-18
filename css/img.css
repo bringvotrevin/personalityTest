@@ -1,9 +1,5 @@
 .mainImg {
   width: 40%;
   margin: 10px auto;
-  border-radius: 30px;
-}
-
-.kakaoImg {
-  width: 5%;
+  padding: 10px;
 }

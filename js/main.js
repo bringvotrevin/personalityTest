@@ -1,5 +1,4 @@
 
-
 const start = () => {
 	qna();
 }

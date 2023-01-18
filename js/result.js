@@ -12,16 +12,8 @@ const displayResult = (userAnswer) => {
 	const shareButton = document.getElementById('kakaotalk-sharing-btn');
 
 	resultPart.insertBefore(resultDiv, shareButton);
-	// resultPart.appendChild(resultDiv);
+	resultDiv.className = "resultDiv";
 	resultDiv.innerHTML = userAnswer.description;
-	resultDiv.style.width =  "50%";
-	resultDiv.style.height = "300px";
-	resultDiv.style.margin = "30px auto";
-	resultDiv.style.padding = "10px";
-	resultDiv.style.border = "px solid #008C7A";
-	resultDiv.style.borderRadius = "10px";
-	resultDiv.style.backgroundColor = '#5EB8AB';
-	// resultDiv.style = "background-image: linear-gradient(60deg, #64b3f4 0%, #c2e59c 100%)";
 }
 
 

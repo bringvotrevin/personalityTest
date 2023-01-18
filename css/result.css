@@ -1,0 +1,13 @@
+.resultDiv {
+  width: 50%;
+  height: 300px;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: black;
+  border-radius: 10px;
+  color: white;
+  vertical-align: middle;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
