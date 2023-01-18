@@ -25,43 +25,35 @@ const addAnswers = (index) => {
 	if (index === 0) {
 		leftQuestion = document.createElement('button');
 		rightQuestion = document.createElement('button');
-		leftQuestion.setAttribute('id', 'leftQuestion');
-		rightQuestion.setAttribute('id', 'rightQuestion');
+		leftQuestion.classList.add('button', 'leftQuestion');
+		rightQuestion.classList.add('button', 'rightQuestion');
 		questions.appendChild(leftQuestion);
 		questions.appendChild(rightQuestion);
 	} else {
-		leftQuestion = document.getElementById('leftQuestion');
-		rightQuestion = document.getElementById('rightQuestion');
+		leftQuestion = document.getElementsByClassName('leftQuestion')[0];
+		rightQuestion = document.getElementsByClassName('rightQuestion')[0];
 	}
 	leftQuestion.innerHTML = questionList[index].answers[0].answer;
-	leftQuestion.style.width = "25%";
-	leftQuestion.style.height = "300px";
-	leftQuestion.style.margin = "20px 20px";
-	leftQuestion.style.padding = "10px";
 	rightQuestion.innerHTML = questionList[index].answers[1].answer;
-	rightQuestion.style.width = "25%";
-	rightQuestion.style.height = "300px";
-	rightQuestion.style.margin = "20px 20px";
-	rightQuestion.style.padding = "10px";
 }
 
 const whenClicked = (index) => {
-	const leftQuestion = document.getElementById('leftQuestion');
-	const rightQuestion = document.getElementById('rightQuestion');
-	leftQuestion.addEventListener("click", function() {
+	const leftQuestion = document.getElementsByClassName('leftQuestion');
+	const rightQuestion = document.getElementsByClassName('rightQuestion');
+	leftQuestion[0].addEventListener("click", function() {
 		questionList[index].answers[0].types.forEach((type) => {
 			userAnswers[type] += 1;
-		})
+		});
 		if (index === 2) result(Object.values(userAnswers));
 		else addQuestion(++index);
 	});
-	rightQuestion.addEventListener("click", function() {
+	rightQuestion[0].addEventListener("click", function() {
 		questionList[index].answers[1].types.forEach((type) => {
-			userAnswers[type]++;
-		})
+			userAnswers[type] += 1;
+		});
 		if (index === 2) result(Object.values(userAnswers));
 		else addQuestion(++index);
-	})
+	});
 }
 
 const qna = (index = 0) => {
