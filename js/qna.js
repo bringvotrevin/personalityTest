@@ -7,8 +7,16 @@ const userAnswers = {
 };
 
 const displayQna = () => {
-	mainPart.style.display = 'none';
-	qnaPart.style.display = 'block';
+	mainPart.style.WebKitAnimation = "fadeOut 0.5s";
+	mainPart.style.animation = "fadeOut 0.5s";
+	setTimeout(() => {
+		qnaPart.style.WebKitAnimation = "fadeIn 0.5s";
+		qnaPart.style.animation = "fadeIn 0.5s";
+		setTimeout(() => {
+			mainPart.style.display = "none";
+			qnaPart.style.display = "block";
+		}, 220);
+	}, 220);
 }
 
 const addQuestion = (index) => {
