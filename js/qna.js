@@ -25,22 +25,25 @@ const addQuestion = (index) => {
 	addAnswers(index);
 }
 
-const addAnswers = (index) => {
-	const questions = document.querySelector('.questions');
-	let leftQuestion;
-	let rightQuestion;
-
+const getButtons = (index) => {
 	if (index === 0) {
-		leftQuestion = document.createElement('button');
-		rightQuestion = document.createElement('button');
+		const questions = document.querySelector('.questions');
+		const leftQuestion = document.createElement('button');
+		const rightQuestion = document.createElement('button');
 		leftQuestion.classList.add('button', 'leftQuestion');
 		rightQuestion.classList.add('button', 'rightQuestion');
 		questions.appendChild(leftQuestion);
 		questions.appendChild(rightQuestion);
-	} else {
-		leftQuestion = document.getElementsByClassName('leftQuestion')[0];
-		rightQuestion = document.getElementsByClassName('rightQuestion')[0];
+		return {leftQuestion, rightQuestion};
 	}
+	const leftQuestion = document.getElementsByClassName('leftQuestion')[0];
+	const rightQuestion = document.getElementsByClassName('rightQuestion')[0];
+	return {leftQuestion, rightQuestion};
+}
+
+const addAnswers = (index) => {
+	const {leftQuestion, rightQuestion} = getButtons(index);
+
 	leftQuestion.innerHTML = questionList[index].answers[0].answer;
 	rightQuestion.innerHTML = questionList[index].answers[1].answer;
 }
