@@ -14,8 +14,8 @@ const displayResult = (userAnswer) => {
 	resultPart.insertBefore(resultDiv, shareButton);
 	// resultPart.appendChild(resultDiv);
 	resultDiv.innerHTML = userAnswer.description;
-	resultDiv.style = "width: 50%";
-	resultDiv.style.height = "40%";
+	resultDiv.style.width =  "50%";
+	resultDiv.style.height = "300px";
 	resultDiv.style.margin = "30px auto";
 	resultDiv.style.padding = "10px";
 	resultDiv.style.border = "px solid #008C7A";
