@@ -5,6 +5,7 @@ const userAnswers = {
 	b: 0,
 	c: 0,
 };
+const numOfClickOnAnswerButton = [0,0,0];
 
 const displayQna = () => {
 	mainPart.style.WebKitAnimation = "fadeOut 0.5s";
@@ -52,6 +53,7 @@ const whenClicked = (index) => {
 	const leftQuestion = document.getElementsByClassName('leftQuestion');
 	const rightQuestion = document.getElementsByClassName('rightQuestion');
 	leftQuestion[0].addEventListener("click", function() {
+		if (numOfClickOnAnswerButton[index]++) return ;
 		questionList[index].answers[0].types.forEach((type) => {
 			userAnswers[type] += 1;
 		});
@@ -59,6 +61,7 @@ const whenClicked = (index) => {
 		else addQuestion(++index);
 	});
 	rightQuestion[0].addEventListener("click", function() {
+		if (numOfClickOnAnswerButton[index]++) return ;
 		questionList[index].answers[1].types.forEach((type) => {
 			userAnswers[type] += 1;
 		});
