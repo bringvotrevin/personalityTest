@@ -16,7 +16,6 @@ const displayResultPage = () => {
 const getResultBody = (userAnswers) => {
 	const max = Math.max(...userAnswers);
 	const resultIndex = userAnswers.indexOf(max);
-	console.log('resultList: ', resultList[resultIndex]);
 	return resultList[resultIndex];
 }
 
