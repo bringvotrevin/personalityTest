@@ -21,8 +21,19 @@ const displayQna = () => {
 }
 
 const addQuestion = (index) => {
-	const qnaHead = document.querySelector('#qnaHeading');
-	qnaHead.innerHTML = questionList[index].question;
+	if (index === 0) {
+		const qnaHead = document.querySelector('#qnaHeading');
+		qnaHead.innerHTML = questionList[index].question;
+	} else {
+		const qnaHead = document.querySelector('#qnaHeading');
+		qnaHead.style.WebKitAnimation = "fadeOut 0.7s";
+		qnaHead.style.animation = "fadeOut 0.7s";
+		setTimeout(() => {
+			qnaHead.innerHTML = questionList[index].question;
+			qnaHead.style.WebKitAnimation = "fadeIn 0.7s";
+			qnaHead.style.animation = "fadeIn 0.7s";
+		}, 350);
+	}
 	addAnswers(index);
 }
 
@@ -45,8 +56,23 @@ const getButtons = (index) => {
 const addAnswers = (index) => {
 	const {leftQuestion, rightQuestion} = getButtons(index);
 
-	leftQuestion.innerHTML = questionList[index].answers[0].answer;
-	rightQuestion.innerHTML = questionList[index].answers[1].answer;
+	if (index === 0) {
+		leftQuestion.innerHTML = questionList[index].answers[0].answer;
+		rightQuestion.innerHTML = questionList[index].answers[1].answer;
+	} else {
+		leftQuestion.style.WebKitAnimation = "fadeOut 0.7s";
+		leftQuestion.style.animation = "fadeOut 0.7s";
+		rightQuestion.style.WebKitAnimation = "fadeOut 0.7s";
+		rightQuestion.style.animation = "fadeOut 0.7s";
+		setTimeout(() => {
+			leftQuestion.innerHTML = questionList[index].answers[0].answer;
+			rightQuestion.innerHTML = questionList[index].answers[1].answer;
+			leftQuestion.style.WebKitAnimation = "fadeIn 0.7s";
+			leftQuestion.style.animation = "fadeIn 0.7s";
+			rightQuestion.style.WebKitAnimation = "fadeIn 0.7s";
+			rightQuestion.style.animation = "fadeIn 0.7s";
+		}, 350);
+	}
 }
 
 const whenClicked = (index) => {
