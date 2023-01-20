@@ -1,16 +1,16 @@
 const resultPart = document.querySelector('#result');
 
 const displayResultPage = () => {
-	qnaPart.style.WebKitAnimation = "fadeOut 0.5s";
-	qnaPart.style.animation = "fadeOut 0.5s";
+	qnaPart.style.WebKitAnimation = "fadeOut 1s";
+	qnaPart.style.animation = "fadeOut 1s";
 	setTimeout(() => {
-		resultPart.style.WebKitAnimation = "fadeIn 0.5s";
-		resultPart.style.animation = "fadeIn 0.5s";
+		resultPart.style.WebKitAnimation = "fadeIn 1s";
+		resultPart.style.animation = "fadeIn 1s";
 		setTimeout(() => {
 			qnaPart.style.display = "none";
 			resultPart.style.display = "block";
-		}, 220);
-	}, 220);
+		}, 450);
+	}, 450);
 }
 
 const getResultBody = (userAnswers) => {
