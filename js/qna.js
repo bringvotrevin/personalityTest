@@ -38,7 +38,8 @@ const addQuestion = (index) => {
 }
 
 const getButtons = (index) => {
-	if (index === 0) {
+	const a = document.querySelector('.leftQuestion');
+	if (a === null) {
 		const questions = document.querySelector('.questions');
 		const leftQuestion = document.createElement('button');
 		const rightQuestion = document.createElement('button');

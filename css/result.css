@@ -6,8 +6,13 @@
   background-color: black;
   border-radius: 10px;
   color: white;
-  vertical-align: middle;
   display: flex;
+  vertical-align: middle;
   justify-content: center;
   align-items: center;
+}
+
+.reset {
+  margin: 10px auto;
+  display: block;
 }

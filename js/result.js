@@ -28,8 +28,35 @@ const displayResultBody = (userAnswer) => {
 	resultDiv.innerHTML = userAnswer.description;
 }
 
+const init = () => {
+	numOfClickOnStartButton = 0;
+	numOfClickOnAnswerButton.forEach((element) => {
+		element = 0;
+	});
+	for (num in userAnswers) {
+		num = 0;
+	}
+	mainPart.style.display = 'block';
+	qnaPart.style.display = 'none';
+	resultPart.style.display = 'none';
+}
+
+const addResetButton = () => {
+	const reset = document.createElement('button');
+
+	reset.className = 'reset';
+	reset.innerHTML = '처음으로';
+	reset.addEventListener('click', () => {
+		init();
+		start();
+	})
+	resultPart.appendChild(reset);
+
+}
+
 const result = (userAnswers) => {
 	displayResultPage();
 	const userAnswer = getResultBody(userAnswers);
 	displayResultBody(userAnswer);
+	addResetButton();
 }
