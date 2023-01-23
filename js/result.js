@@ -43,9 +43,6 @@ const init = () => {
 
 const addResetButton = () => {
 	const reset = document.createElement('button');
-	// const re = document.createElement('input');
-	// re.setAttribute('type', 'reset');
-	// resultPart.appendChild(re);
 
 	reset.className = 'reset';
 	reset.innerHTML = '처음으로';
