@@ -38,48 +38,48 @@ const addQuestion = (index) => {
 }
 
 const getButtons = (index) => {
-	const a = document.querySelector('.leftQuestion');
+	const a = document.querySelector('.leftAnswer');
 	if (a === null) {
-		const questions = document.querySelector('.questions');
-		const leftQuestion = document.createElement('button');
-		const rightQuestion = document.createElement('button');
-		leftQuestion.classList.add('button', 'leftQuestion');
-		rightQuestion.classList.add('button', 'rightQuestion');
-		questions.appendChild(leftQuestion);
-		questions.appendChild(rightQuestion);
-		return {leftQuestion, rightQuestion};
+		const answers = document.querySelector('.answers');
+		const leftAnswer = document.createElement('button');
+		const rightAnswer = document.createElement('button');
+		leftAnswer.classList.add('button', 'leftAnswer');
+		rightAnswer.classList.add('button', 'rightAnswer');
+		answers.appendChild(leftAnswer);
+		answers.appendChild(rightAnswer);
+		return {leftAnswer, rightAnswer};
 	}
-	const leftQuestion = document.getElementsByClassName('leftQuestion')[0];
-	const rightQuestion = document.getElementsByClassName('rightQuestion')[0];
-	return {leftQuestion, rightQuestion};
+	const leftAnswer = document.getElementsByClassName('leftAnswer')[0];
+	const rightAnswer = document.getElementsByClassName('rightAnswer')[0];
+	return {leftAnswer, rightAnswer};
 }
 
 const addAnswers = (index) => {
-	const {leftQuestion, rightQuestion} = getButtons(index);
+	const {leftAnswer, rightAnswer} = getButtons(index);
 
 	if (index === 0) {
-		leftQuestion.innerHTML = questionList[index].answers[0].answer;
-		rightQuestion.innerHTML = questionList[index].answers[1].answer;
+		leftAnswer.innerHTML = questionList[index].answers[0].answer;
+		rightAnswer.innerHTML = questionList[index].answers[1].answer;
 	} else {
-		leftQuestion.style.WebKitAnimation = "fadeOut 0.7s";
-		leftQuestion.style.animation = "fadeOut 0.7s";
-		rightQuestion.style.WebKitAnimation = "fadeOut 0.7s";
-		rightQuestion.style.animation = "fadeOut 0.7s";
+		leftAnswer.style.WebKitAnimation = "fadeOut 0.7s";
+		leftAnswer.style.animation = "fadeOut 0.7s";
+		rightAnswer.style.WebKitAnimation = "fadeOut 0.7s";
+		rightAnswer.style.animation = "fadeOut 0.7s";
 		setTimeout(() => {
-			leftQuestion.innerHTML = questionList[index].answers[0].answer;
-			rightQuestion.innerHTML = questionList[index].answers[1].answer;
-			leftQuestion.style.WebKitAnimation = "fadeIn 0.7s";
-			leftQuestion.style.animation = "fadeIn 0.7s";
-			rightQuestion.style.WebKitAnimation = "fadeIn 0.7s";
-			rightQuestion.style.animation = "fadeIn 0.7s";
+			leftAnswer.innerHTML = questionList[index].answers[0].answer;
+			rightAnswer.innerHTML = questionList[index].answers[1].answer;
+			leftAnswer.style.WebKitAnimation = "fadeIn 0.7s";
+			leftAnswer.style.animation = "fadeIn 0.7s";
+			rightAnswer.style.WebKitAnimation = "fadeIn 0.7s";
+			rightAnswer.style.animation = "fadeIn 0.7s";
 		}, 350);
 	}
 }
 
 const whenClicked = (index) => {
-	const leftQuestion = document.getElementsByClassName('leftQuestion');
-	const rightQuestion = document.getElementsByClassName('rightQuestion');
-	leftQuestion[0].addEventListener("click", function() {
+	const leftAnswer = document.getElementsByClassName('leftAnswer');
+	const rightAnswer = document.getElementsByClassName('rightAnswer');
+	leftAnswer[0].addEventListener("click", function() {
 		if (numOfClickOnAnswerButton[index]++) return ;
 		questionList[index].answers[0].types.forEach((type) => {
 			userAnswers[type] += 1;
@@ -87,7 +87,7 @@ const whenClicked = (index) => {
 		if (index === 2) result(Object.values(userAnswers));
 		else addQuestion(++index);
 	});
-	rightQuestion[0].addEventListener("click", function() {
+	rightAnswer[0].addEventListener("click", function() {
 		if (numOfClickOnAnswerButton[index]++) return ;
 		questionList[index].answers[1].types.forEach((type) => {
 			userAnswers[type] += 1;
