@@ -1,15 +1,7 @@
 .questions {
-  /* font-size: 30px; */
-  /* text-align: center; */
   width: 80%;
-  /* height: 300px; */
   margin: 0 auto;
-  /* display: flex; */
   justify-content: center;
-
-  /* border: 30px solid #fff; */
-  /* border-radius: 10px; */
-  /* box-sizing: border-box; */
 }
 
 .button {

@@ -56,22 +56,19 @@ const getButtons = (index) => {
 
 const addAnswers = (index) => {
 	const {leftAnswer, rightAnswer} = getButtons(index);
+	const answers = document.querySelector('.answers');
 
 	if (index === 0) {
 		leftAnswer.innerHTML = questionList[index].answers[0].answer;
 		rightAnswer.innerHTML = questionList[index].answers[1].answer;
 	} else {
-		leftAnswer.style.WebKitAnimation = "fadeOut 0.7s";
-		leftAnswer.style.animation = "fadeOut 0.7s";
-		rightAnswer.style.WebKitAnimation = "fadeOut 0.7s";
-		rightAnswer.style.animation = "fadeOut 0.7s";
+		answers.style.WebKitAnimation = "fadeOut 0.7s";
+		answers.style.animation = "fadeOut 0.7s";
 		setTimeout(() => {
 			leftAnswer.innerHTML = questionList[index].answers[0].answer;
 			rightAnswer.innerHTML = questionList[index].answers[1].answer;
-			leftAnswer.style.WebKitAnimation = "fadeIn 0.7s";
-			leftAnswer.style.animation = "fadeIn 0.7s";
-			rightAnswer.style.WebKitAnimation = "fadeIn 0.7s";
-			rightAnswer.style.animation = "fadeIn 0.7s";
+			answers.style.WebKitAnimation = "fadeIn 0.7s";
+			answers.style.animation = "fadeIn 0.7s";
 		}, 350);
 	}
 }
