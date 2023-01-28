@@ -8,11 +8,9 @@ const userAnswers = {
 const numOfClickOnAnswerButton = [0,0,0];
 
 const displayQna = () => {
-	mainPart.style.WebKitAnimation = "fadeOut 0.5s";
-	mainPart.style.animation = "fadeOut 0.5s";
+	applyAnimation(mainPart, "fadeOut 0.5s");
 	setTimeout(() => {
-		qnaPart.style.WebKitAnimation = "fadeIn 0.5s";
-		qnaPart.style.animation = "fadeIn 0.5s";
+		applyAnimation(qnaPart, "fadeIn 0.5s");
 		setTimeout(() => {
 			mainPart.style.display = "none";
 			qnaPart.style.display = "block";
@@ -26,12 +24,10 @@ const addQuestion = (index) => {
 		qnaHead.innerHTML = questionList[index].question;
 	} else {
 		const qnaHead = document.querySelector('#qnaHeading');
-		qnaHead.style.WebKitAnimation = "fadeOut 0.7s";
-		qnaHead.style.animation = "fadeOut 0.7s";
+		applyAnimation(qnaHead, "fadeOut 0.7s");
 		setTimeout(() => {
 			qnaHead.innerHTML = questionList[index].question;
-			qnaHead.style.WebKitAnimation = "fadeIn 0.7s";
-			qnaHead.style.animation = "fadeIn 0.7s";
+			applyAnimation(qnaHead, "fadeIn 0.7s");
 		}, 350);
 	}
 	addAnswers(index);
@@ -62,13 +58,11 @@ const addAnswers = (index) => {
 		leftAnswer.innerHTML = questionList[index].answers[0].answer;
 		rightAnswer.innerHTML = questionList[index].answers[1].answer;
 	} else {
-		answers.style.WebKitAnimation = "fadeOut 0.7s";
-		answers.style.animation = "fadeOut 0.7s";
+		applyAnimation(answers, "fadeOut 0.7s");
 		setTimeout(() => {
 			leftAnswer.innerHTML = questionList[index].answers[0].answer;
 			rightAnswer.innerHTML = questionList[index].answers[1].answer;
-			answers.style.WebKitAnimation = "fadeIn 0.7s";
-			answers.style.animation = "fadeIn 0.7s";
+			applyAnimation(answers, "fadeIn 0.7s");
 		}, 350);
 	}
 }

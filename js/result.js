@@ -1,11 +1,9 @@
 const resultPart = document.querySelector('#result');
 
 const displayResultPage = () => {
-	qnaPart.style.WebKitAnimation = "fadeOut 1s";
-	qnaPart.style.animation = "fadeOut 1s";
+	applyAnimation(qnaPart, "fadeOut 1s");
 	setTimeout(() => {
-		resultPart.style.WebKitAnimation = "fadeIn 1s";
-		resultPart.style.animation = "fadeIn 1s";
+		applyAnimation(resultPart, "fadeIn 1s");
 		setTimeout(() => {
 			qnaPart.style.display = "none";
 			resultPart.style.display = "block";
